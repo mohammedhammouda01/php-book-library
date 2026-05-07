@@ -16,7 +16,6 @@ $submittedData = [];
 $isEditMode = false;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // أ- حذف كتاب
     if (isset($_POST['action']) && $_POST['action'] === 'delete') {
         $idToDelete = (int)$_POST['book_id'];
         $_SESSION['books'] = array_filter($_SESSION['books'], function($book) use ($idToDelete) {
